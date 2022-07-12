@@ -1,0 +1,154 @@
+@import '../utils/variables/colors';
+@import '../utils/fonts/fortescue';
+
+.tour-container {
+  .tour-block {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .tour-details {
+    text-align: center;
+    margin: 3em 0;
+    .tour-header {
+      text-align: center;
+      margin: 0 0 2em 0;
+      h1 {
+        font-size: 5rem;
+        font-family: Fortescue;
+      }
+    }
+    .tour-info {
+      display: flex;
+      justify-content: center;
+      .tour-info-cell {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 0 1.5em;
+        border-right: 0.01em solid $darkGray;
+        p:first-child {
+          letter-spacing: 0.2rem;
+          color: $accentColor;
+        }
+        p:nth-child(2), ul li {
+          font-family: Fortescue;
+          font-weight: lighter;
+        }
+        p.large-paragraph {
+          font-size: 2rem;
+        }
+        &:last-child {
+          border-right: none;
+          ul {
+            display: flex;
+            li {
+              max-width: 7em;
+              white-space: nowrap;
+              font-size: 1.25rem;
+              &:after {
+                content: ',';
+                padding-right: 0.15em;
+              }
+              &:last-child:after {
+                content: '';
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .tour-poster {
+    display: flex;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 50em;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .tour-highlights {
+    background-image: url("https://www.tauck.com/img/topo-map.png");
+    max-width: 100%;
+    margin: 3em 0;
+    .tour-highlights-subinfo {
+      align-items: center;
+      p:nth-child(2) {
+        padding: 0.5em 0;
+        max-width: 55vw;
+        color: $commonTextColor;
+        font-family: Fortescue;
+        font-size: 2rem;
+        text-align: center;
+      }
+    }
+    .highlights-blocks {
+      display: flex;
+      margin: 2em 0 0 7em;
+      .highlight-container {
+        display: flex;
+        position: relative;
+        max-width: 25%;
+        max-height: 35em;
+        width: 25%;
+        height: 35em;
+        background-size: cover;
+        background-position: center;
+        margin-right: 1em;
+        .highlight-title {
+          display: flex;
+          align-items: flex-end;
+          max-width: 100%;
+          width: 100%;
+          color: white;
+          font-family: Fortescue;
+          font-size: 1.5rem;
+          padding: 2em 1.5em;
+        }
+        .highlight-description {
+          overflow: hidden;
+          position: absolute;
+          justify-content: flex-end;
+          bottom: 0;
+          left: 0;
+          height: 50%;
+          color: white;
+          font-size: 1rem;
+          background-color: #9ac133;
+          padding: 0 1.5em;
+          opacity: 0;
+          transition: transform .5s linear, opacity .5s linear, height .5s linear;
+          p:first-child {
+            font-size: 1.5rem;
+            font-family: Fortescue;
+            padding-bottom: 0.5em;
+          }
+          p:last-child {
+            padding-bottom: 2em;
+          }
+        }
+        &:hover {
+          background-color: #9ac133;
+          .highlight-title {
+            display: none;
+          }
+          .highlight-description {
+            height: 100%;
+            transform: translateY(0%);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+  .tour-schedule {
+    margin: 3em 0;
+    align-items: center;
+
+
+  }
+}
