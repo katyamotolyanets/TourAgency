@@ -1,4 +1,36 @@
+@import "../utils/variables/colors";
+
 .authorization-container {
+  position: relative;
   display: flex;
   flex-direction: column;
+  max-width: 40vmin;
+  padding: 2em;
+  a {
+    color: $accentColor;
+  }
+  .form-header {
+    text-align: left;
+  }
+  .form-footer {
+    text-align: center;
+  }
+  .authorization-form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    input {
+      width: auto;
+      height: 3em;
+      border: none;
+      margin: 1em 0;
+      padding-left: 5%;
+      background-color: $lightGray;
+    }
+    input.submit-button {
+      padding: 0;
+      background-color: $lightColor;
+    }
+  }
 }

@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import {useSelector} from "react-redux";
+import {Link} from "react-router-dom";
+
 import {register} from "../../../actions/userActions";
+import "../../../App.scss"
 
 const RegisterPage = () => {
     const [userData, setUserData] = useState({
@@ -23,23 +25,30 @@ const RegisterPage = () => {
 
     return (
         <div className="authorization-container">
-            <form method="post" onSubmit={handleSubmit}>
-                <label htmlFor="email">Email</label>
+            <p className="form-header">Sign Up</p>
+            <form method="post"
+                  onSubmit={handleSubmit}
+                  className="authorization-form"
+            >
                 <input type="email"
                        name="email"
                        onChange={handleChangeData}
+                       placeholder="Email Address"
                 />
-                <label htmlFor="password">Password</label>
                 <input type="password"
                        name="password"
                        onChange={handleChangeData}
+                       placeholder="Enter password"
                 />
-                <label htmlFor="confirmPassword">Email</label>
                 <input type="password"
                        name="confirmPassword"
                        onChange={handleChangeData}
+                       placeholder="Re-enter password"
                 />
-                <input type="submit"/>
+                <input type="submit" className="submit-button"/>
+                <p className="form-footer">
+                    Already have an account? <Link to={{pathname: '/login/'}}>Log in</Link>
+                </p>
             </form>
         </div>
     );
