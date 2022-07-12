@@ -1,0 +1,76 @@
+@import "../utils/variables/colors";
+
+.hotels-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  .hotel-container {
+    display: flex;
+    max-width: 25vmax;
+    width: 100%;
+    margin: 1.5vmax;
+    flex-direction: column;
+    .hotel-icon {
+      width: 100%;
+      max-height: 12em;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.5em 0.5em 0 0;
+      }
+    }
+    .hotel-info {
+      display: flex;
+      flex-direction: column;
+      p {
+        &:first-child {
+          padding-top: 2%;
+          font-size: 1.5rem;
+          font-weight: bold;
+          line-height: 1em;
+        }
+        &:nth-child(2) {
+          padding: 0;
+          margin: 0;
+          font-size: 1.5em;
+          color: #b3b3b3;
+        }
+      }
+      p.hotel-info-city:before {
+        background-image: url("../../location-icon.png");
+        background-size: 1em 1em;
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        content:"";
+        position: relative;
+        top: 10%;
+      }
+      .hotel-conveniences {
+        display: flex;
+        .convenience-icon-container {
+          position: relative;
+          margin: 1%;
+          &:hover::after {
+            content: attr(data-title);
+            position: absolute;
+            left: 20%;
+            top: 80%;
+            z-index: 1;
+            font-size: 0.7rem;
+            padding: 0.5em;
+            border: 1px solid #333;
+          }
+          img {
+            width: 1.5em;
+            height: 1.5em;
+
+          }
+        }
+
+      }
+    }
+  }
+}
